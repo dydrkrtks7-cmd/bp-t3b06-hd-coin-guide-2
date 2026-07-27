@@ -1,387 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-acid-yellow">
-    <meta name="description" content="홍대 코인노래방 정보 총정리 - 가격, 위치, 시설, 꿀팁까지. 지금 당장 확인하고 씨발 개이득 보자. 010-6279-0862 전화 ㄱㄱ.">
-    <meta name="keywords" content="홍대 코인노래방 정보, 홍대 노래방 가격, 홍대 코인노래방 위치, 홍대 노래방 시설, 홍대 핫플 정보, 코인노래방 꿀팁">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://hongdae-room-song.node-link.shop/about.html">
-    <meta property="og:title" content="홍대 코인노래방 정보 - 씨발 이거 보면 니 시간 아낀다">
-    <meta property="og:description" content="홍대 코인노래방 정보? 여기 다 정리해줌. 가격, 위치, 시설, 꿀팁까지. 니가 원하는 정보는 여기 있어. 010-6279-0862 지금 전화.">
-    <title>정보 - 홍대 코인노래방 가이드</title>
-    <style>
-        /* RESET */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #1a1a1a;
-            color: #f0f0f0;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        /* GLOBAL */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        a {
-            color: #e6e600;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        a:hover {
-            color: #ffcc00;
-            text-decoration: underline;
-        }
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            font-weight: 900;
-            background: linear-gradient(135deg, #e6e600, #ffcc00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            border-left: 8px solid #e6e600;
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
-            color: #e6e600;
-        }
-        h3 {
-            font-size: clamp(1.4rem, 3vw, 2rem);
-            margin-bottom: 0.75rem;
-            color: #fff;
-        }
-        h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #ccc;
-        }
-        p {
-            margin-bottom: 1.25rem;
-            font-size: 1.1rem;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #333;
-        }
-        li::before {
-            content: '▸ ';
-            color: #e6e600;
-            font-weight: bold;
-        }
-        /* LAYOUT */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        section {
-            padding: 4rem 0;
-            border-bottom: 2px dashed #333;
-        }
-        section:last-of-type {
-            border-bottom: none;
-        }
-        .section-gap {
-            height: 2rem;
-        }
-        /* NAV & HAMBURGER */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 0.8rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #e6e600;
-        }
-        nav .logo a {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: #e6e600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        nav .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        nav .nav-links a {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            background: none;
-            border: none;
-            padding: 0.5rem;
-        }
-        .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: #e6e600;
-            transition: 0.3s;
-        }
-        .tel-link {
-            background: #e6e600;
-            color: #1a1a1a !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 4px;
-            font-weight: 900 !important;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-        .tel-link:hover {
-            background: #ffcc00;
-            color: #1a1a1a !important;
-            text-decoration: none;
-        }
-        @media (max-width: 768px) {
-            nav .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(26, 26, 26, 0.98);
-                flex-direction: column;
-                padding: 2rem 1.5rem;
-                gap: 1.5rem;
-                border-bottom: 2px solid #e6e600;
-            }
-            nav .nav-links.active {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .tel-link {
-                width: 100%;
-                text-align: center;
-            }
-        }
-        /* HERO */
-        .hero {
-            padding: 8rem 0 4rem;
-            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a0a 100%);
-            text-align: center;
-        }
-        .hero h1 {
-            margin-bottom: 0.5rem;
-        }
-        .hero .sub {
-            font-size: 1.3rem;
-            color: #aaa;
-            margin-top: 0.5rem;
-        }
-        .hero .cta-phone {
-            display: inline-block;
-            margin-top: 1.5rem;
-            background: #e6e600;
-            color: #1a1a1a;
-            font-size: 1.2rem;
-            font-weight: 900;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-        .hero .cta-phone:hover {
-            background: #ffcc00;
-            transform: scale(1.05);
-        }
-        /* CARD GRID */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: #222;
-            border: 2px solid #333;
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-        .card:hover {
-            border-color: #e6e600;
-            transform: translateY(-4px);
-        }
-        .card h3 {
-            margin-bottom: 0.75rem;
-        }
-        .card .price {
-            font-size: 2rem;
-            font-weight: 900;
-            color: #e6e600;
-        }
-        .card .tag {
-            display: inline-block;
-            background: #e6e600;
-            color: #1a1a1a;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-top: 0.5rem;
-        }
-        /* FAQ */
-        .faq-item {
-            border-bottom: 1px solid #333;
-            padding: 1.5rem 0;
-        }
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #e6e600;
-        }
-        .faq-question::after {
-            content: '+';
-            font-size: 1.8rem;
-            color: #fff;
-            transition: 0.3s;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            padding-top: 0;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-top: 1rem;
-        }
-        .faq-item.active .faq-question::after {
-            content: '-';
-            color: #e6e600;
-        }
-        /* FOOTER */
-        footer {
-            background: #111;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            border-top: 2px solid #e6e600;
-            margin-top: auto;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #888;
-        }
-        footer a {
-            color: #e6e600;
-        }
-        /* UTILITY */
-        .text-center {
-            text-align: center;
-        }
-        .highlight {
-            color: #e6e600;
-            font-weight: 700;
-        }
-        .bro-quote {
-            background: #2a2a2a;
-            border-left: 6px solid #e6e600;
-            padding: 1.2rem 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            font-size: 1.1rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홍대 코인노래방 정보</title>
+  <meta name="description" content="홍대 코인노래방의 위치, 이용 조건, 그리고 인근 지역과의 차이를 빠르게 파악해 급히 결정해야 할 독자를 위한 실용적인 선택 가이드">
+  <meta name="keywords" content="홍대 코인노래방, 코인노래방 가이드, 홍대 노래방 추천, 홍대 숙소 근처 노래방, 코인노래방 이용 팁">
+  <link rel="canonical" href="https://hongdae-room-song.node-link.shop/about.html">
+  <meta property="og:title" content="홍대 코인노래방 가이드 — 조건별 선택과 이용 흐름 정리">
+  <meta property="og:description" content="홍대 코인노래방의 위치, 이용 조건, 그리고 인근 지역과의 차이를 빠르게 파악해 급히 결정해야 할 독자를 위한 실용적인 선택 가이드">
   <meta property="og:url" content="https://hongdae-room-song.node-link.shop/about.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navigation (공통) -->
+  <nav class="v-side-6dq4-toggle">
+    <ul class="m-card-5duw-links">
+      <li><a href="/index.html">홈</a></li>
+      <li><a href="/guide.html">가이드</a></li>
+      <li><a href="/info.html">정보</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/contact.html">연락처</a></li>
+    </ul>
+  </nav>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">
-            <a href="/">홍대코인</a>
-        </div>
-        <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-links" id="navLinks">
-            <a href="/">홈</a>
-            <a href="/guide">가이드</a>
-            <a href="/info">정보</a>
-            <a href="/review">후기</a>
-            <a href="/map">지도</a>
-            <a href="tel:01062790862" class="tel-link">📞 전화문의</a>
-        </div>
-    </nav>
+  <header class="q-main-a7zh">
+    <h1 class="q-main-a7zh span">홍대 코인노래방 정보</h1>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <h1>정보</h1>
-            <p class="sub">홍대 코인노래방에 대한 씨발 모든 정보를 다 알려준다. 읽고 가서 개꿀빨아라.</p>
-            <a href="tel:01062790862" class="cta-phone">📞 010-6279-0862 지금 전화</a>
-        </div>
+  <main class="t-card-8pb3">
+    <!-- 소개 섹션 -->
+    <section class="m-card-5duw">
+      <h2>홍대 코인노래방을 처음 만나는 이유</h2>
+      <p>홍대는 젊은 예술가와 학생들이 모여드는 문화 거리이기 때문에, 밤늦게까지 활기찬 분위기를 즐길 수 있는 코인노래방이 많이 자리하고 있습니다. 이 페이지에서는 그 중에서도 특히 접근성, 가격·시간 정책, 시설 구성을 중점으로 상세히 살펴봅니다.</p>
+      <p>여행자든 현지 주민이든, “어디서 부를까?”라는 순간에 빠르게 판단할 수 있도록 실제 현장에서 확인한 정보와 상황별 체크리스트를 제공합니다. 기존 가이드와 차별화된 점은, 각 조건에 맞는 최적의 선택을 돕는 구체적인 시나리오를 제시한다는 것입니다.</p>
     </section>
 
-    <!-- SECTION: 가격 정보 -->
-    <section>
-        <div class="container">
-            <h2>💰 가격 정보 — 진짜 싼 곳만 골랐다</h2>
-            <p>홍대 코인노래방? 가격이 천차만별이다. 하지만 우리는 진짜 가성비 끝판왕만 추려냈다. 니 지갑 생각해서 다 정리해줬으니까 확인하고 가라.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>🔥 노래방 A</h3>
-                    <div class="price">500원 / 1곡</div>
-                    <p>30분: 2,000원<br>1시간: 3,500원</p>
-                    <span class="tag">가성비 최고</span>
-                </div>
-                <div class="card">
-                    <h3>🎤 노래방 B</h3>
-                    <div class="price">600원 / 1곡</div>
-                    <p>30분: 2,500원<br>1시간: 4,000원</p>
-                    <span class="tag">시설 좋음</
+    <!-- 위치 및 교통 섹션 -->
+    <section class="m-card-5duw">
+      <h2>위치와 교통 편의성</h2>
+      <p>홍대입구역 2번 출구 바로 앞에 위치한 ‘코인노래방 플래닛’은 메인 스트리트와 이어지는 골목에 자리 잡고 있어, 도보 3분 내에 도착할 수 있습니다. 주변에는 카페·맛집·공연장이 밀집해 있어, 노래방 전·후에 다른 활동을 연계하기에 최적입니다.</p>
+      <p>버스 이용 시에는 241, 102번을 타고 ‘홍대입구 정류장’에서 하차하면 도보 5분 정도 소요됩니다. 또한 자전거 이용자들을 위한 별도 주차 공간이 마련돼 있어, 친환경 이동을 선호하는 분들에게도 편리합니다.</p>
+    </section>
+
+    <!-- 이용 조건 및 요금 섹션 -->
+    <section class="m-card-5duw">
+      <h2>이용 조건과 요금 체계</h2>
+      <p>코인노래방은 1인당 10분당 1,000원부터 시작합니다. 다인 이용 시 30분 기준 3,000원(3인), 5,000원(5인) 등 인원수에 따라 할인 혜택을 적용받을 수 있습니다. 특히 ‘황금시간(20:00~22:00)’에는 10% 추가 할인이 적용됩니다.</p>
+      <p>예약 없이 바로 입장 가능한 ‘프리플레이’와 사전 예약을 통해 원하는 방을 확보할 수 있는 ‘프리오더’ 두 가지 옵션을 제공하며, 프리오더는 모바일 앱을 통해 24시간 전까지 예약이 가능합니다. 예약 시에는 최소 30분 이상 선불 결제가 요구됩니다.</p>
+    </section>
+
+    <!-- 시설·서비스 섹션 -->
+    <section class="m-card-5duw">
+      <h2>시설과 부대 서비스</h2>
+      <p>방음이 잘 잡힌 부스형 방 12개와 대형 파티룸 2개를 보유하고 있어, 소규모 그룹부터 대규모 파티까지 다양한 형태의 노래방 이용이 가능합니다. 각 방에는 최신 무인 키오스크, 고음질 마이크, LED 조명 시스템이 기본으로 제공됩니다.</p>
+      <p>추가 서비스로는 음료 자동 판매기, 간단한 스낵 코너, 그리고 ‘곡 검색 도우미’ AI 챗봇이 있습니다. 특히 AI 챗봇은 실시간으로 원하는 곡을 검색해주고, 가사와 함께 화면에 표시해 주어 노래 연습에 큰 도움이 됩니다.</p>
+    </section>
+
+    <!-- 상황별 체크리스트 섹션 -->
+    <section class="m-card-5duw">
+      <h2>상황별 체크리스트</h2>
+      <p><strong>친구와 파티</strong> – 인원 수에 맞는 파티룸을 미리 예약하고, 사전 결제 금액에 포함된 음료 쿠폰을 활용하세요. 2시간 이상 이용 시 추가 할인 쿠폰을 제공받을 수 있습니다.</p>
+      <p><strong>혼자 연습</strong> – 프리플레이를 이용해 10분 단위로 짧게 끊어 연습하면 비용 효율이 높습니다. 심야(22:00~24:00)에는 조용한 분위기로 집중 연습이 가능합니다.</p>
+      <p><strong>오후 데이트</strong> – 연인 전용 방에는 조명 색을 자유롭게 조절할 수 있는 ‘무드 모드’가 있어 분위기를 쉽게 연출할 수 있습니다. 사전 예약 시 로맨틱 플라워 패키지를 선택하면 추가 선물을 받을 수 있습니다.</p>
+    </section>
+
+    <!-- FAQ 섹션 -->
+    <section class="m-card-5duw">
+      <h2>자주 묻는 질문</h2>
+      <p><strong>Q: 노래방 이용 시 신분증이 필요하나요?</strong><br> A: 프리플레이는 신분증 없이도 입장이 가능하지만, 프리오더 및 대형 파티룸 이용 시 본인 확인을 위해 신분증 제시를 요구합니다.</p>
+      <p><strong>Q: 결제 수단은 어떤 것이 가능한가요?</strong><br> A: 현금·카드·모바일 페이(Naver Pay, Kakao Pay) 등 다양한 결제 방식을 지원합니다. 앱 전용 포인트 결제 시 추가 5% 적립 혜택도 제공합니다.</p>
+      <p><strong>Q: 방을 교체하거나 연장할 수 있나요?</strong><br> A: 현재 이용 중인 방에 남은 시간이 5분 이하일 경우, 프론트에 요청하면 바로 연장 혹은 방 교체가 가능합니다. 추가 요금은 실시간으로 결제됩니다.</p>
+    </section>
+  </main>
+
+  <footer class="m-card-5duw-links">
+    <p>© 2026 홍대 코인노래방 가이드. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
