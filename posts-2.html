@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b06-hd-coin-guide-2</title>
+  <meta name="description" content="t3b06-hd-coin-guide-2에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hongdae-room-song.node-link.shop/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* RESET */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ }
+ body {
+ background-color: #111111;
+ color: #ffff00;
+ font-family: monospace, 'Courier New', 'Impact', sans-serif;
+ min-height: 100vh;
+ line-height: 1.4;
+ display: flex;
+ flex-direction: column;
+ }
+
+ /* GLOBAL */
+ img {
+ max-width: 100%;
+ display: block;
+ }
+ a {
+ color: #00ff41;
+ text-decoration: underline;
+ text-underline-offset: 3px;
+ }
+ a:hover {
+ color: #ffff00;
+ background: #111111;
+ text-decoration: none;
+ border: 2px solid #00ff41;
+ padding: 0 4px;
+ }
+ h1, h2, h3, h4 {
+ font-family: 'Impact', monospace, sans-serif;
+ text-transform: uppercase;
+ letter-spacing: -1px;
+ line-height: 0.9;
+ }
+ h1 {
+ font-size: clamp(3rem, 8vw, 5rem);
+ color: #ffff00;
+ text-shadow: 4px 4px 0 #00ff41;
+ }
+ h2 {
+ font-size: 2.8rem;
+ border-left: 8px solid #00ff41;
+ padding-left: 16px;
+ transform: rotate(-1deg);
+ margin-bottom: 32px;
+ }
+ h3 {
+ font-size: 1.8rem;
+ }
+ p {
+ margin-bottom: 16px;
+ max-width: 70ch;
+ }
+ ul {
+ list-style: none;
+ }
+ li {
+ margin-bottom: 8px;
+ }
+
+ /* LAYOUT */
+ .container {
+ padding: 0 48px;
+ max-width: 100% !important;
+ width: 100%;
+ }
+ section {
+ padding: 48px 0;
+ border-bottom: 4px solid #ffff00;
+ }
+ section:last-of-type {
+ border-bottom: none;
+ }
+ .section-gap {
+ margin-bottom: 80px;
+ }
+
+ /* HEADER */
+ header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px 48px;
+ background: #111111;
+ border-bottom: 4px solid #00ff41;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ .logo {
+ font-size: 1.5rem;
+ font-weight: bold;
+ color: #ffff00;
+ text-decoration: none;
+ border: 3px solid #ffff00;
+ padding: 4px 12px;
+ transform: rotate(-2deg);
+ }
+ .logo:hover {
+ background: #ffff00;
+ color: #111111;
+ }
+ nav {
+ display: flex;
+ gap: 24px;
+ align-items: center;
+ }
+ nav a {
+ color: #00ff41;
+ font-size: 1.2rem;
+ font-weight: bold;
+ text-transform: uppercase;
+ text-decoration: none;
+ border: 2px solid transparent;
+ padding: 4px 8px;
+ }
+ nav a:hover {
+ border-color: #00ff41;
+ background: none;
+ }
+ .hamburger {
+ display: none;
+ background: none;
+ border: 3px solid #ffff00;
+ color: #ffff00;
+ font-size: 1.8rem;
+ padding: 4px 12px;
+ cursor: pointer;
+ }
+ .nav-open {
+ display: flex !important;
+ flex-direction: column;
+ position: absolute;
+ top: 64px;
+ left: 0;
+ right: 0;
+ background: #111111;
+ border-bottom: 4px solid #00ff41;
+ padding: 24px;
+ gap: 16px;
+ }
+
+ /* HERO */
+ .hero {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ min-height: 80vh;
+ padding: 48px 48px 80px;
+ position: relative;
+ overflow: hidden;
+ border-bottom: 8px solid #00ff41;
+ }
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: -20%;
+ right: -10%;
+ width: 400px;
+ height: 400px;
+ background: repeating-linear-gradient(
+ 45deg,
+ #ffff00 0px,
+ #ffff00 10px,
+ #00ff41 10px,
+ #00ff41 20px
+ );
+ opacity: 0.15;
+ transform: rotate(15deg);
+ pointer-events: none;
+ }
+ .hero h1 {
+ margin-bottom: 24px;
+ max-width: 900px;
+ }
+ .hero p {
+ font-size: 1.4rem;
+ color: #00ff41;
+ max-width: 600px;
+ margin-bottom: 32px;
+ }
+ .hero .cta {
+ display: inline-block;
+ background: #ffff00;
+ color: #111111;
+ padding: 16px 48px;
+ font-size: 1.6rem;
+ font-weight: bold;
+ text-decoration: none;
+ border: 4px solid #00ff41;
+ transform: rotate(-3deg);
+ text-transform: uppercase;
+ }
+ .hero .cta:hover {
+ background: #00ff41;
+ border-color: #ffff00;
+ transform: rotate(0deg);
+ }
+
+ /* ASYMMETRIC BLOCKS */
+ .asymmetric {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 32px;
+ align-items: start;
+ }
+ .asymmetric .block {
+ border: 4px solid #ffff00;
+ padding: 32px;
+ background: #1a1a1a;
+ transform: rotate(1deg);
+ }
+ .asymmetric .block:nth-child(2) {
+ margin-top: -40px;
+ transform: rotate(-2deg);
+ border-color: #00ff41;
+ }
+ .asymmetric .block:nth-child(3) {
+ margin-left: -20px;
+ transform: rotate(1.5deg);
+ }
+
+ /* REVIEW CARDS (UGC) */
+ .reviews-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 32px;
+ margin-top: 40px;
+ }
+ .review-card {
+ border: 4px solid #ffff00;
+ padding: 24px;
+ background: #1a1a1a;
+ transform: rotate(var(--rot, 0deg));
+ position: relative;
+ }
+ .review-card:nth-child(odd) {
+ --rot: -1deg;
+ }
+ .review-card:nth-child(even) {
+ --rot: 2deg;
+ }
+ .review-card:hover {
+ border-color: #00ff41;
+ background: #111111;
+ transform: rotate(0deg) scale(1.02);
+ }
+ .review-card .author {
+ font-weight: bold;
+ color: #ffff00;
+ font-size: 1.2rem;
+ }
+ .review-card .date {
+ color: #00ff41;
+ font-size: 0.9rem;
+ }
+ .review-card .stars {
+ color: #ffff00;
+ font-size: 1.4rem;
+ letter-spacing: 4px;
+ }
+ .review-card .text {
+ margin-top: 12px;
+ color: #ccc;
+ }
+
+ /* FOOTER */
+ footer {
+ padding: 48px;
+ border-top: 6px solid #00ff41;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 24px;
+ }
+ footer .copyright {
+ color: #ffff00;
+ font-size: 0.9rem;
+ }
+ footer .phone {
+ font-size: 1.6rem;
+ font-weight: bold;
+ color: #00ff41;
+ text-decoration: none;
+ border: 4px solid #00ff41;
+ padding: 8px 24px;
+ transform: rotate(-1deg);
+ }
+ footer .phone:hover {
+ background: #00ff41;
+ color: #111111;
+ }
+
+ /* OVERLAPPING SECTION */
+ .overlap-section {
+ margin-top: -40px;
+ position: relative;
+ z-index: 2;
+ }
+
+ /* TABLES / LISTS */
+ .info-list {
+ border: 4px solid #00ff41;
+ padding: 32px;
+ background: #0a0a0a;
+ }
+ .info-list li {
+ display: flex;
+ justify-content: space-between;
+ border-bottom: 2px dashed #ffff00;
+ padding: 12px 0;
+ font-size: 1.1rem;
+ }
+ .info-list li:last-child {
+ border-bottom: none;
+ }
+ .info-list .label {
+ color: #ffff00;
+ font-weight: bold;
+ }
+ .info-list .value {
+ color: #00ff41;
+ }
+
+ /* RESPONSIVE */
+ @media (max-width: 768px) {
+ .container {
+ padding: 0 24px;
+ }
+ header {
+ padding: 12px 24px;
+ }
+ .hamburger {
+ display: block;
+ }
+ nav {
+ display: none;
+ }
+ .hero {
+ padding: 48px 24px 60px;
+ min-height: 60vh;
+ }
+ .hero h1 {
+ font-size: 2.5rem;
+ }
+ .asymmetric {
+ grid-template-columns: 1fr;
+ }
+ .asymmetric .block:nth-child(2),
+ .asymmetric .block:nth-child(3) {
+ margin: 0;
+ transform: none;
+ }
+ footer {
+ flex-direction: column;
+ text-align: center;
+ padding: 32px 24px;
+ }
+ footer .phone {
+ font-size: 1.2rem;
+ padding: 6px 16px;
+ }
+ section {
+ padding: 32px 0;
+ }
+ h2 {
+ font-size: 2rem;
+ }
+ }
+ @media (max-width: 480px) {
+ .hero h1 {
+ font-size: 2rem;
+ }
+ .hero p {
+ font-size: 1rem;
+ }
+ .hero .cta {
+ font-size: 1.2rem;
+ padding: 12px 32px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b06-hd-coin-guide-2">
+  <meta property="og:description" content="t3b06-hd-coin-guide-2에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hongdae-room-song.node-link.shop/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <a href="/" class="logo">🎤 홍대코인</a>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="toggleMenu()">☰</button>
+ <nav id="nav">
+ <a href="#guide">가이드</a>
+ <a href="#reviews">후기</a>
+ <a href="#info">정보</a>
+ 
+ </nav>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0177.html">홍대 코인노래방 가이드 활용법 및 홍대 노래방 추천정보</a>
+        <p class="post-item__summary">친구들과 홍대 거리에서 식사를 마친 후 자연스럽게 노래방을 찾는 상황을 흔히 마주합니다. 처음 방문하는 이들은 화려한 간판 속에 숨겨진 입구를 찾지 못해 당황하기도 합니다. 홍대 코인노래방 가이드를</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0178.html">홍대 코인노래방 가이드 보며 확인하는 공덕 셔츠룸 추천정보</a>
+        <p class="post-item__summary">유흥 시설을 방문할 때 흔히 갖는 오해 중 하나는 무조건 밤늦은 시간에만 서비스가 활발할 것이라는 생각입니다. 실제로 운영 형태에 따라 방문객들이 선호하는 시간대는 매우 다양하게 나뉩니다. 홍대 코</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0179.html">홍대 코인노래방 가이드 통해 알아보는 연남 유흥 추천정보</a>
+        <p class="post-item__summary">성공적인 모임을 계획하기 위해서는 장소의 위치, 인원 수용 능력, 그리고 분위기라는 세 가지 조건이 조화를 이루어야 합니다. 홍대 코인노래방 가이드를 통해 기본적인 공간 이용 지식을 습득한 분들은 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0180.html">홍대 코인노래방 가이드 읽고 비교하는 마곡 가라오케 추천정보</a>
+        <p class="post-item__summary">여러분은 평소에 가라오케를 선택할 때 어떤 기준을 가장 중요하게 생각하시나요? 많은 분이 가격만을 따지지만, 실제로는 시설의 관리 상태와 음향 장비의 질이 만족도를 크게 결정합니다. 홍대 코인노래방</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0181.html">홍대 코인노래방 가이드 활용해 마곡 유흥 추천정보 확인하는 절차</a>
+        <p class="post-item__summary">홍대 코인노래방 가이드 문서를 참고하는 이들이 마곡 지역의 유흥 문화를 탐색할 때 겪는 혼란을 줄이는 절차를 설명합니다. 첫 번째 단계는 해당 업소의 영업 시간과 주요 고객층을 사전에 온라인에서 검</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0182.html">홍대 코인노래방 가이드 비교로 합정 노래방 추천정보 분석하기</a>
+        <p class="post-item__summary">홍대 코인노래방 가이드를 살펴보다 보면 합정 지역의 일반적인 노래방과의 차이점을 궁금해하는 경우가 많습니다. 코인노래방은 1곡 혹은 시간 단위로 자유롭게 결제하는 소규모 서비스에 최적화되어 있습니다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0183.html">홍대 코인노래방 가이드 통해 연남 클럽 추천정보 예약 체크</a>
+        <p class="post-item__summary">홍대 코인노래방 가이드와 같은 가벼운 마음으로 연남 지역의 클럽을 예약하려다 보면 생각보다 복잡한 절차에 당황하기 쉽습니다. 많은 이들이 실패하는 지점은 예약 마감 시간과 보증금 정책을 제대로 확인</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0184.html">홍대 코인노래방 가이드 활용 합정 셔츠룸 추천정보 확인법</a>
+        <p class="post-item__summary">홍대 코인노래방 가이드를 평소 자주 확인하는 분들이라면 합정의 셔츠룸 정보를 찾을 때도 비슷한 수준의 기준이 필요함을 잘 아실 것입니다. 셔츠룸은 일반적인 노래방과는 다른 특수한 형태의 운영 방식을</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0185.html">홍대 코인노래방 가이드 활용해 찾는 공덕 가라오케 추천정보 및 이용 팁</a>
+        <p class="post-item__summary">친구들과 저녁 모임을 마친 뒤 2차 장소를 급하게 찾아 헤매는 상황은 누구에게나 익숙할 것입니다. 단순히 노래만 부르는 공간보다 조금 더 격식 있고 독립적인 환경을 찾는다면 가라오케가 훌륭한 대안이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0186.html">홍대 코인노래방 가이드 이후 찾아보는 상수 마사지 추천정보와 시간대 선택</a>
+        <p class="post-item__summary">많은 이들이 마사지는 피로가 극에 달했을 때만 방문하는 서비스라고 생각하곤 합니다. 하지만 이는 잘못된 오해이며 주기적인 관리가 신체 회복에 얼마나 큰 도움을 주는지 간과한 결과입니다. 평소 홍대 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0187.html">홍대 코인노래방 가이드 읽고 준비하는 망원 노래방 추천정보와 인원 구성</a>
+        <p class="post-item__summary">좋은 노래방을 찾기 위해서는 먼저 매장이 보유한 음향 장비의 질과 룸의 청결도, 그리고 서비스 정책이 조화를 이루어야 합니다. 단순히 접근성이 좋다는 이유만으로 방문하기보다는 방문자의 인원 구성에 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">홍대 코인노래방 가이드</a>
+        <p class="post-item__summary">홍대 지역에서 코인노래방을 이용하려는 이용자들에게는 공간의 특성과 운영 방식에 대한 기본적인 이해가 필요합니다. 코인노래방은 노래 한 곡당 정해진 금액을 지불하고 이용하는 시스템으로, 혼자 방문하거</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">홍대 코인노래방 가이드</a>
+        <p class="post-item__summary">홍대 지역은 다양한 유흥 시설이 밀집해 있어 방문객들이 즐길 수 있는 문화적 요소가 풍부한 곳입니다. 그중에서도 코인노래방은 혼자만의 시간을 보내거나 소수의 인원이 모여 노래를 부르며 스트레스를 해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">홍대 코인노래방 가이드</a>
+        <p class="post-item__summary">홍대 지역에는 다양한 코인노래방이 위치해 있으며, 방문자는 원하는 분위기와 규모에 맞는 공간을 선택할 수 있습니다. 이러한 시설들은 주로 젊은 층과 주변 주민들로부터 지속적인 관심을 받으며, 다양한</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">홍대 코인노래방 가이드</a>
+        <p class="post-item__summary">홍대 인근 코인노래방을 찾을 때는 기본 이용 원칙과 현장에서의 매너를 우선 확인하는 것이 중요합니다. 코인노래방은 시간을 단위별로결제하는 구조이며, 노래방 내부에서는 다른 손님과 함께 공간을 공유해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">홍대 코인노래방 가이드</a>
+        <p class="post-item__summary">홍대 인근에서는 다양한 코인노래방을 만날 수 있으며, 각 업소는 서로 다른 분위기나 시설을 갖추고 있습니다. 방문 전 예상 비용을 파악하는 것이 중요하며, 이를 위해 가격 비교 정보를 참고할 수 있</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-001-bvxe0j.html">홍대 코인노래방 가이드 솔직 후기</a>
+        <p class="post-item__summary">홍대 지역은 다양한 즐길 거리가 가득한 공간이지만 그중에서도 코인노래방은 짧은 시간 동안 스트레스를 해소하기에 가장 좋은 장소입니다. 번화가 특성상 매우 많은 시설이 밀집해 있어 어디를 선택해야 할</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-002-1goyxy3.html">홍대 코인노래방 마이크 위생과 장비 효율의 진실</a>
+        <p class="post-item__summary">보통 홍대 코인노래방에 가면 다들 최신식 기계나 화려한 조명만 찾는데 사실 그건 핵심이 아니다. 진짜 봐야 할 건 마이크 커버의 재질과 교체 주기다. 대부분의 매장이 얇은 부직포 커버를 쓰지만 사실</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
